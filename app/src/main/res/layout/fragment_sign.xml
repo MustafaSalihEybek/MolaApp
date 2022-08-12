@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:scrollbars="none"
     android:id="@+id/sign_fragment_viewPager"
-    tools:context=".view.SignFragment">
+    tools:context=".view.sign.SignFragment">
 
 </androidx.viewpager2.widget.ViewPager2>
 

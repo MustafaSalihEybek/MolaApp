@@ -16,4 +16,7 @@
     <color name="redBgColor">#C92828</color>
     <color name="pinkBgColor">#FC7C7C</color>
     <color name="whiteTxtColor">#F4F4F4</color>
+    
+    <color name="barBgColor">#FFFFFF</color>
+    <color name="barStickBgColor">#D1D1D1</color>
 </resources>

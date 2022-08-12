@@ -6,6 +6,18 @@
 
     <fragment
         android:id="@+id/signFragment"
-        android:name="com.nexis.mola.view.SignFragment"
-        android:label="SignFragment" />
+        android:name="com.nexis.mola.view.sign.SignFragment"
+        android:label="SignFragment" >
+        <action
+            android:id="@+id/action_signFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.nexis.mola.view.MainFragment"
+        android:label="MainFragment" >
+        <argument
+            android:name="userId"
+            app:argType="string" />
+    </fragment>
 </navigation>

@@ -1,14 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.SignUpFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/appBgColor"
+    android:scrollbars="none"
+    tools:context=".view.sign.SignUpFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:paddingBottom="15dp"
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <ImageView
+            android:layout_width="300dp"
+            android:src="@drawable/mola_logo"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="150dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Kayıt Ol"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30sp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/redTxtColor"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="Ad ve Soyad"
+            android:paddingEnd="15dp"
+            android:id="@+id/sign_up_fragment_editFullName"
+            android:inputType="textPersonName"
+            android:paddingStart="15dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:textColorHint="@color/redTxtColor"
+            android:textColor="@color/redTxtColor"
+            android:fontFamily="@font/poppins_bold"
+            android:background="@drawable/edit_bg"
+            android:layout_height="50dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="Kullanıcı Adı"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:paddingEnd="15dp"
+            android:id="@+id/sign_up_fragment_editUserName"
+            android:inputType="textPersonName"
+            android:paddingStart="15dp"
+            android:layout_marginTop="20dp"
+            android:textColorHint="@color/redTxtColor"
+            android:textColor="@color/redTxtColor"
+            android:fontFamily="@font/poppins_bold"
+            android:background="@drawable/edit_bg"
+            android:layout_height="50dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="Şifre"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:paddingEnd="15dp"
+            android:id="@+id/sign_up_fragment_editPassword"
+            android:inputType="textPassword"
+            android:paddingStart="15dp"
+            android:layout_marginTop="20dp"
+            android:textColorHint="@color/redTxtColor"
+            android:textColor="@color/redTxtColor"
+            android:fontFamily="@font/poppins_bold"
+            android:background="@drawable/edit_bg"
+            android:layout_height="50dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="Email adresi"
+            android:paddingEnd="15dp"
+            android:id="@+id/sign_up_fragment_editEmail"
+            android:inputType="textEmailAddress"
+            android:paddingStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:textColorHint="@color/redTxtColor"
+            android:textColor="@color/redTxtColor"
+            android:fontFamily="@font/poppins_bold"
+            android:background="@drawable/edit_bg"
+            android:layout_height="50dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/sign_up_fragment_spinnerGender"
+                android:background="@drawable/edit_bg"
+                android:layout_marginEnd="15dp"
+                android:layout_height="50dp"/>
+
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/sign_up_fragment_spinnerAge"
+                android:background="@drawable/edit_bg"
+                android:layout_marginStart="15dp"
+                android:layout_height="50dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:text="Kayıt Ol"
+            android:layout_marginTop="45dp"
+            android:layout_gravity="center_horizontal"
+            android:textSize="21sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/whiteTxtColor"
+            android:textAllCaps="false"
+            android:id="@+id/sign_up_fragment_btnSignUp"
+            android:background="@drawable/red_btn_bg"
+            app:backgroundTint="@null"/>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="Giriş Yap"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center_horizontal"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/whiteTxtColor"
+            android:textAllCaps="false"
+            android:id="@+id/sign_up_fragment_btnSignIn"
+            android:background="@drawable/pink_btn_bg"
+            app:backgroundTint="@null"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainFragment">
+
+    <include
+        android:id="@+id/mola_toolbar"
+        layout="@layout/mola_toolbar"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:id="@+id/main_fragment_frameLayout"
+        android:layout_below="@id/mola_toolbar"
+        android:layout_above="@+id/main_fragment_bottomBar"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="3"
+        android:id="@+id/main_fragment_bottomBar"
+        android:background="@drawable/bottom_bar_bg"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/main_fragment_imgProfile"
+            android:src="@drawable/profile_unselected"
+            android:layout_height="40dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/main_fragment_imgCall"
+            android:src="@drawable/call_unselected"
+            android:layout_height="40dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:id="@+id/main_fragment_imgShop"
+            android:layout_weight="1"
+            android:src="@drawable/shop_unselected"
+            android:layout_height="40dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+</layout>

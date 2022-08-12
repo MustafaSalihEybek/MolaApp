@@ -1,11 +1,10 @@
-package com.nexis.mola.view
+package com.nexis.mola.view.sign
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.nexis.mola.R
 import com.nexis.mola.adapter.SignFragmentAdapter
 import com.nexis.mola.databinding.FragmentSignBinding
 import com.nexis.mola.util.Singleton

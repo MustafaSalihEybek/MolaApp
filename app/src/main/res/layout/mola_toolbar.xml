@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/bar_bg"
+    android:paddingTop="2.5dp"
+    android:paddingBottom="2.5dp"
+    android:id="@+id/mola_toolbar"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/mola_bar_logo"
+        android:layout_height="55dp"/>
+
+</androidx.appcompat.widget.Toolbar>
