@@ -1,14 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout>
+
+    <data>
+        <variable
+            name="user"
+            type="com.nexis.mola.model.User" />
+    </data>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="15dp"
+        android:id="@+id/profile_fragment_relativeProfile"
+        android:paddingBottom="15dp"
+        android:background="@drawable/bar_bg"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_fragment_imgProfile"
+            android:layout_width="106dp"
+            android:layout_height="106dp"
+            android:downloadImg="@{user.userProfileUrl}"
+            app:civ_border_color="@color/redBgColor"
+            app:civ_border_width="4dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            android:gravity="center_vertical"
+            android:layout_alignBottom="@+id/profile_fragment_imgProfile"
+            android:layout_alignTop="@+id/profile_fragment_imgProfile"
+            android:layout_toEndOf="@+id/profile_fragment_imgProfile"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@{user.userNick}"
+                    android:textSize="18sp"
+                    android:textColor="@color/redTxtColor"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:setGender="@{user.userGender}"
+                    android:layout_marginStart="10dp"
+                    android:layout_height="20dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Kalan Dakika: 23"
+                android:textSize="13sp"
+                android:textColor="@color/redTxtColor"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="-5dp"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:src="@drawable/cake"
+                    android:layout_height="25dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@{String.valueOf(user.userAge)}"
+                    android:layout_marginTop="3dp"
+                    android:textSize="13sp"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/redTxtColor"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@id/profile_fragment_imgProfile"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:background="@drawable/red_btn_bg"
+                android:layout_height="30dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="Düzenle"
+                    android:id="@+id/profile_fragment_txtEdit"
+                    android:gravity="center"
+                    android:background="@drawable/red_ripple"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/white"
+                    android:layout_height="match_parent"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/pink_btn_bg"
+                android:layout_height="30dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="Çıkış Yap"
+                    android:id="@+id/profile_fragment_txtLogout"
+                    android:gravity="center"
+                    android:background="@drawable/pink_ripple"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@color/white"
+                    android:layout_height="match_parent"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="15dp"
+        android:layout_alignParentStart="true"
+        android:id="@+id/profile_fragment_linearTitle"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/profile_fragment_relativeProfile"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Geçmiş Mesajlar"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="@color/pinkTxtColor"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:background="@color/redBgColor"
+            android:layout_height="3dp"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_below="@+id/profile_fragment_linearTitle"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:scrollbars="none" />
 
-</FrameLayout>
+</RelativeLayout>
+
+</layout>

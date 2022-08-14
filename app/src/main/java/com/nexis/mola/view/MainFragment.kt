@@ -16,20 +16,25 @@ class MainFragment : Fragment(), View.OnClickListener {
     private lateinit var customBottomBar: CustomBottomBar
 
     private lateinit var fTransaction: FragmentTransaction
+    private lateinit var userId: String
 
     private fun init(){
-        customBottomBar = CustomBottomBar(
-            arrayOf(R.drawable.profile_selected, R.drawable.call_selected, R.drawable.shop_selected),
-            arrayOf(R.drawable.profile_unselected, R.drawable.call_unselected, R.drawable.shop_unselected),
-            arrayOf(ProfileFragment(), CallFragment(), ShopFragment()),
-            arrayOf(mainBinding.mainFragmentImgProfile, mainBinding.mainFragmentImgCall, mainBinding.mainFragmentImgShop)
-        )
+        arguments?.let {
+            userId = MainFragmentArgs.fromBundle(it).userId
 
-        setFragment(customBottomBar.selectBar(0))
+            customBottomBar = CustomBottomBar(
+                arrayOf(R.drawable.profile_selected, R.drawable.call_selected, R.drawable.shop_selected),
+                arrayOf(R.drawable.profile_unselected, R.drawable.call_unselected, R.drawable.shop_unselected),
+                arrayOf(ProfileFragment(userId), CallFragment(), ShopFragment(userId)),
+                arrayOf(mainBinding.mainFragmentImgProfile, mainBinding.mainFragmentImgCall, mainBinding.mainFragmentImgShop)
+            )
 
-        mainBinding.mainFragmentImgProfile.setOnClickListener(this)
-        mainBinding.mainFragmentImgCall.setOnClickListener(this)
-        mainBinding.mainFragmentImgShop.setOnClickListener(this)
+            setFragment(customBottomBar.selectBar(0))
+
+            mainBinding.mainFragmentImgProfile.setOnClickListener(this)
+            mainBinding.mainFragmentImgCall.setOnClickListener(this)
+            mainBinding.mainFragmentImgShop.setOnClickListener(this)
+        }
     }
 
     override fun onCreateView(

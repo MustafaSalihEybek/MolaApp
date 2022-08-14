@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.CallFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/call_fragment_txtMinutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Kalan Dakika: 23"
+        android:textColor="@color/redTxtColor"
+        android:textSize="28sp" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginEnd="-15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-15dp"
+        android:layout_below="@+id/call_fragment_txtMinutes"
+        android:layout_alignEnd="@+id/call_fragment_txtMinutes"
+        android:layout_alignStart="@+id/call_fragment_txtMinutes"
+        android:gravity="center"
+        android:layout_marginBottom="135dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="110dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/mola_logo" />
+
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:text="Eşleştir"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_marginTop="50dp"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            android:textAllCaps="false"
+            android:background="@drawable/pink_btn_bg"
+            app:backgroundTint="@null"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

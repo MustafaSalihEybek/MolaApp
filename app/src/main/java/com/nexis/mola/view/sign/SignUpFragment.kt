@@ -108,7 +108,8 @@ class SignUpFragment : Fragment(), View.OnClickListener {
                     userFullName,
                     userNick,
                     selectedGender,
-                    selectedAge
+                    selectedAge,
+                    ""
                 )
 
                 signUpViewModel.saveUserData(AppUtil.userData)
